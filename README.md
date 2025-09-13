@@ -25,6 +25,15 @@ set PROXY_PORT=1080
 node src/index.js
 ```
 
+or
+
+```powershell
+$env:PROXY_USER="user"
+$env:PROXY_PASS="pass"
+$env:PROXY_PORT="1080"
+node src/index.js
+```
+
 ## Test with curl
 
 Requires curl compiled with SOCKS5 support.
