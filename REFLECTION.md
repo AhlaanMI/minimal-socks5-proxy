@@ -1,10 +1,7 @@
 # Reflection
 
-(Write 2–3 paragraphs covering: what you had to learn, how you debugged, what to improve.)
+During this project I had to learn the SOCKS5 protocol from scratch, digging into RFCs and packet flows to understand how the handshake, authentication, and tunneling actually work. I also got more comfortable with Node’s net module, since working directly with raw TCP sockets and buffers is very different from building typical web servers.
 
-Suggested prompts:
+Debugging was mostly about logging each step of the connection and testing with curl --socks5-hostname, which made it easy to catch issues like wrong credentials or parsing mistakes. Dumping raw buffers and tracking the state machine helped me spot problems quickly and ensure connections closed cleanly.
 
-- Which parts of SOCKS5 spec did you read / reference?
-- Any tricky binary parsing issues and how you verified bytes?
-- How did you test failure paths (bad auth, unsupported command)?
-- If more time: which features or robustness improvements first?
+With more time, I’d add things like timeouts, better logging, and support for more of the SOCKS5 features (e.g., UDP associate, BIND). I’d also want to add unit tests around the parser and state logic to make the code more robust.

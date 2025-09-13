@@ -33,6 +33,12 @@ Requires curl compiled with SOCKS5 support.
 curl -v --socks5-hostname %PROXY_USER%:%PROXY_PASS%@127.0.0.1:%PROXY_PORT% https://ipinfo.io/ip
 ```
 
+or
+
+```powershell
+& "C:\Windows\System32\curl.exe" -v --socks5-hostname user:pass@127.0.0.1:1080 https://ipinfo.io/ip
+```
+
 You should see an IP address in the response body.
 
 ## Example Output (logs)
